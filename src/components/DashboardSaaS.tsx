@@ -523,7 +523,7 @@ export default function DashboardSaaS({
             </p>
           </div>
 
-          <div className="sticky top-4">
+          <div className="sticky top-4 flex flex-col gap-4">
             {/* Direct extension preview window */}
             <ExtensionPopup 
               scans={scans} 
@@ -531,6 +531,35 @@ export default function DashboardSaaS({
               onNewScan={onNewScan}
               stats={activeStats}
             />
+
+            {/* Quick guide on how to load unpacked extension */}
+            <div className="w-full max-w-[360px] bg-surface-container border border-white/10 rounded-2xl p-4.5 text-left shadow-lg select-none">
+              <div className="flex items-center gap-2 mb-2 text-primary">
+                <Info className="w-4 h-4" />
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider">CHROME DEVELOPMENT HANDBOOK</span>
+              </div>
+              <h4 className="text-body-sm font-bold text-on-surface mb-2">How to load extension in Chrome</h4>
+              
+              <div className="p-3 bg-surface-container-low border border-white/5 rounded-xl space-y-2 text-xs text-on-surface-variant">
+                <p className="leading-relaxed">
+                  The extension is configured! When loading unpacked on Chrome, make sure to enter the project folder and select the inner subfolder:
+                </p>
+                <div className="flex flex-col gap-1 w-full bg-surface-container/50 p-2 rounded-lg border border-white/5 font-mono text-[11px] text-on-surface">
+                  <div className="flex items-center gap-1.5 text-on-surface-variant/70 text-[10px]">
+                    📂 Project Root ⇒ ❌ <span className="text-error font-sans font-bold">No manifest.json found</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 mt-1 text-primary">
+                    📁 extension / ⇒ <span className="bg-primary/20 px-1 rounded text-primary font-sans font-medium text-[10px]">✓ Choose this folder</span>
+                  </div>
+                </div>
+                <ol className="list-decimal pl-4.5 space-y-1.5 mt-2.5 leading-relaxed text-on-surface-variant">
+                  <li>Type <code className="bg-white/10 px-1.5 py-0.5 rounded font-mono text-on-surface">chrome://extensions/</code> in Chrome browser URL bar.</li>
+                  <li>Enable <strong>Developer mode</strong> switch in the top-right corner.</li>
+                  <li>Click <strong>Load unpacked</strong> in the top-left area.</li>
+                  <li>Choose the <strong className="text-primary font-bold font-mono">extension</strong> subdirectory inside this source directory.</li>
+                </ol>
+              </div>
+            </div>
           </div>
 
         </div>

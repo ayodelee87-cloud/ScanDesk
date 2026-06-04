@@ -76,6 +76,17 @@
     <p style="font-size: 12px; opacity: 0.8; line-height: 1.4;" id="risk-desc"></p>
   </div>
 
+  <div style="margin-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;">
+    <button id="toggle-settings" style="background: transparent; border: none; color: #c3c0ff; font-size: 11px; cursor: pointer; padding: 0; font-family: inherit; font-weight: 500; display: flex; align-items: center; gap: 4px;">
+      ⚙️ Connection Settings
+    </button>
+    <div id="settings-area" style="display: none; margin-top: 8px;">
+      <label style="font-size: 9px; opacity: 0.6; display: block; margin-bottom: 4px; text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px;">Workspace Node URL</label>
+      <input type="text" id="backend-url-input" style="width: 100%; box-sizing: border-box; background: rgba(255,255,255,0.05); border: 1px solid rgba(220,220,255,0.15); border-radius: 6px; padding: 6px; color: white; font-family: monospace; font-size: 11px;" value="http://localhost:3000">
+      <button id="save-settings-btn" style="width: 100%; background: #4f46e5; border: none; border-radius: 6px; color: white; padding: 6px; font-size: 11px; font-weight: bold; margin-top: 6px; cursor: pointer; transition: opacity 0.2s;">Save Connection</button>
+    </div>
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 // ScanDesk Chrome Extension controller script
 // It registers click triggers, queries the active viewport, and communicates with the backend api
 
-const BACKEND_URL = "http://localhost:3000"; // Update with your secure production domain (e.g. APP_URL) if deployed
+// Retrieve stored URL config, defaulting to localhost
+let BACKEND_URL = localStorage.getItem("scandesk_backend_url") || "http://localhost:3000";
 
 document.getElementById("scan-btn").addEventListener("click", async () => {
   const scanBtn = document.getElementById("scan-btn");
@@ -85,3 +86,28 @@ async function initStats() {
   }
 }
 initStats();
+
+// Toggle Settings Drawer
+document.getElementById("toggle-settings").addEventListener("click", () => {
+  const settingsArea = document.getElementById("settings-area");
+  settingsArea.style.display = settingsArea.style.display === "none" ? "block" : "none";
+});
+
+// Load saved settings on startup
+document.getElementById("backend-url-input").value = BACKEND_URL;
+
+// Save configuration updates
+document.getElementById("save-settings-btn").addEventListener("click", () => {
+  const saveBtn = document.getElementById("save-settings-btn");
+  const customUrl = document.getElementById("backend-url-input").value.trim();
+  if (customUrl) {
+    BACKEND_URL = customUrl.replace(/\/$/, ""); // Strip trailing slash for consistency
+    localStorage.setItem("scandesk_backend_url", BACKEND_URL);
+    saveBtn.textContent = "Saved ✓";
+    setTimeout(() => {
+      saveBtn.textContent = "Save Connection";
+      document.getElementById("settings-area").style.display = "none";
+    }, 800);
+    initStats();
+  }
+});
