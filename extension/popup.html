@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ScanDesk Shield</title>
+  <style>
+    body {
+      width: 360px;
+      height: 520px;
+      margin: 0;
+      padding: 16px;
+      background-color: #020617;
+      color: #dae2fd;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+    .title {
+      font-weight: 800;
+      color: #c3c0ff;
+    }
+    .btn {
+      width: 100%;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 16px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background-color: #4338ca;
+    }
+    .stats {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .result {
+      margin-top: 16px;
+      display: none;
+    }
+    .safe { color: #34d399; }
+    .warning { color: #fb923c; }
+    .danger { color: #f87171; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">ScanDesk Shield</div>
+    <div style="font-size: 11px; opacity: 0.6;">v3.0.0</div>
+  </div>
+
+  <button class="btn" id="scan-btn">Scan Active Tab Link</button>
+
+  <div class="stats">
+    <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; opacity: 0.6;">Scan Statistics</div>
+    <div style="font-size: 24px; font-weight: bold; margin-top: 4px;" id="scans-count">0 / 50 Scans</div>
+  </div>
+
+  <div class="result" id="result-box">
+    <h3 style="font-size: 14px; text-transform: uppercase;">Audit Result</h3>
+    <div style="font-size: 32px; font-weight: 900;" id="risk-score">0</div>
+    <div style="font-weight: bold; margin-top: 4px;" id="risk-status">SAFE</div>
+    <p style="font-size: 12px; opacity: 0.8; line-height: 1.4;" id="risk-desc"></p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

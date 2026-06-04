@@ -1,0 +1,6 @@
+{
+  "name": "ScanDesk",
+  "description": "A web security and real-time screen threat detection desk powered by heuristics and Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

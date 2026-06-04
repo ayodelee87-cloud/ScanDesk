@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "ScanDesk Threat Shield",
+  "version": "3.0.0",
+  "description": "Scans screen elements and active browser tabs for phishing links and security vulnerabilities.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

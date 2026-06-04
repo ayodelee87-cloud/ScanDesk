@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Fetch Geist & JetBrains Mono fonts for maximum systematic clinical aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@400;600;800;900&display=swap');
+
+@theme {
+  --color-surface-tint: #c3c0ff;
+  --color-primary: #c3c0ff;
+  --color-on-primary: #1d00a5;
+  --color-primary-container: #4f46e5;
+  --color-on-primary-container: #dad7ff;
+  --color-inverse-primary: #4d44e3;
+  --color-secondary: #89ceff;
+  --color-on-secondary: #00344d;
+  --color-secondary-container: #00a2e6;
+  --color-on-secondary-container: #00344e;
+  --color-tertiary: #d0bcff;
+  --color-on-tertiary: #3c0091;
+  --color-tertiary-container: #6f3dd9;
+  --color-on-tertiary-container: #e3d5ff;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  
+  /* Surface hierarchy system matching Design files (Indigo dark aesthetic) */
+  --color-background: #020617;
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-variant: #2d3449;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #c7c4d8;
+  --color-inverse-surface: #dae2fd;
+  --color-inverse-on-surface: #283044;
+  --color-outline: #918fa1;
+  --color-outline-variant: #464555;
+
+  /* Typography Pairing */
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Spacing unit matching spacing rules (4px Baseline grid) */
+  --spacing-stack-gap: 12px;
+  --spacing-element-gap: 8px;
+  --spacing-container-padding: 16px;
+  --spacing-section-margin: 24px;
+
+  /* Concentric radii definitions */
+  --radius-sm: 4px;
+  --radius-DEFAULT: 8px; /* Secondary radius */
+  --radius-md: 12px;
+  --radius-lg: 14px; /* Primary radius */
+  --radius-xl: 24px;
+}
+
+/* Custom global CSS modifications for Atmospheric Depth */
+html, body {
+  background-color: #020617;
+  color: #dae2fd;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header style configurations */
+.title-target {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01e;
+}
+
+/* Smooth minimalistic scrollbar implementation for extension replica views */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(195, 192, 255, 0.3);
+}
+
+/* Glassmorphism custom classes */
+.glass-effect {
+  background: rgba(23, 31, 51, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
